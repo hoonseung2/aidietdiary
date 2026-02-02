@@ -1,0 +1,16 @@
+# 보안 파일
+.env
+
+# 파이썬 캐시 및 실행 파일
+__pycache__/
+*.py[cod]
+*$py.class
+
+# 가상환경
+venv/
+.venv/
+env/
+
+# 에디터 설정
+.vscode/
+.idea/
