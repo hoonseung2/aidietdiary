@@ -11,3 +11,5 @@
 - 스마트 검색 : AI가 추출한 키워드를 바탕으로 SQLite DB 내의 식품 영양 성분 매칭.
 - 영양 대시보드 : 'Plotly'를 활용한 최근 7일간의 칼로리 추이 및 오늘의 탄/단/지 섭취 비율 시각화.
 - 데이터 자동 저장 : SQLite를 활용하여 개인별 식단 로그를 영구적으로 저장.
+
+[![Streamlit App](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://aidietdiary-7f9wdxhtn5n79pfq2wxyjs.streamlit.app/)
