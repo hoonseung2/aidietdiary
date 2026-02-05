@@ -104,7 +104,7 @@ elif choice == "로그인":
             chart_df = pd.read_sql(chart_query, con=engine, params={"uid": username})
             if not chart_df.empty:
                 fig = px.line(chart_df.sort_values('date'), x='date', y='daily_cal', markers=True)
-                st.plotly_chart(fig, use_container_width=True)
+                st.plotly_chart(fig, width='stretch')
             else:
                 st.info("기록을 시작하면 차트가 나타납니다.")
 
@@ -141,8 +141,22 @@ elif choice == "로그인":
                     3. 설명이나 문장은 절대 포함하지 마.
                     예: 돈까스, 고기튀김, 커틀릿
                     """
-                    response = client.models.generate_content(model="gemini-flash-latest", contents=[prompt, img])
-                    
+                    try:
+                    # 2026년 기준 최신 모델명 사용
+                        response = client.models.generate_content(
+                        model="gemini-1.5-flash",  # 혹은 "gemini-flash-latest"
+                        contents=[prompt, img]
+                        )
+                    except Exception as e:
+                        # 429 에러(Quota Exceeded) 처리
+                        if "429" in str(e):
+                            st.warning("⚠️ 현재 무료 API 할당량을 모두 소모했습니다. 약 1분 후 다시 시도해주세요.")
+                        # 기타 에러 처리
+                        else:
+                            st.error(f"❌ 분석 중 오류가 발생했습니다: {e}")
+    
+                        # 에러 발생 시 이후 로직(데이터베이스 저장 등)이 실행되지 않도록 중단
+                        st.stop()                
 
                     raw_text = response.text.strip().replace('\n', ',')
                     keywords = [k.strip() for k in raw_text.split(',') if k.strip()]
