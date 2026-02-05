@@ -1,0 +1,15 @@
+# AI Diet Diary (AI 식단 관리 비서)
+
+ **Gemini AI를 활용하여 사진 한 장으로 식단을 기록하고 영양 성분을 분석하는 스마트 다이어리 앱입니다.**
+
+# 서비스 개요
+ - 식단 기록을 AI 이미지 분석을 통해 해결합니다. 사용자가 올린 음식 사진을 AI로 분석하여 공공데이터베이스(식약처)의 영양 성분과 매칭하고, 그래프를 통해 일일 영양 섭취 현황을 한눈에 파악할 수 있습니다.
+
+# 주요 기능
+- 회원가입 및 로그인 : 'streamlit-authenticator'를 이용한 안전한 사용자 인증 및 개인별 데이터 관리.
+- AI 음식 인식 : Google Gemini-1.5-Flash 모델을 사용하여 사진 속 음식을 정확하게 판별.
+- 스마트 검색 : AI가 추출한 키워드를 바탕으로 SQLite DB 내의 식품 영양 성분 매칭.
+- 영양 대시보드 : 'Plotly'를 활용한 최근 7일간의 칼로리 추이 및 오늘의 탄/단/지 섭취 비율 시각화.
+- 데이터 자동 저장 : SQLite를 활용하여 개인별 식단 로그를 영구적으로 저장.
+
+[![Streamlit App](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://aidietdiary-7f9wdxhtn5n79pfq2wxyjs.streamlit.app/)
