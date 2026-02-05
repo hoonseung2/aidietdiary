@@ -118,7 +118,7 @@ elif choice == "로그인":
             if not ratio_df.empty and ratio_df.iloc[0].sum() > 0:
                 melted_df = ratio_df.melt(var_name='영양소', value_name='g')
                 pie_fig = px.pie(melted_df, values='g', names='영양소', hole=0.3)
-                st.plotly_chart(pie_fig, use_container_width=True)
+                st.plotly_chart(pie_fig, width='stretch')
             else:
                 st.info("오늘의 데이터가 없습니다.")
 
