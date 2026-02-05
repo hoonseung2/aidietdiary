@@ -1,4 +1,4 @@
-3 AI Diet Diary (AI 식단 관리 비서)
+# AI Diet Diary (AI 식단 관리 비서)
 
  **Gemini AI를 활용하여 사진 한 장으로 식단을 기록하고 영양 성분을 분석하는 스마트 다이어리 앱입니다.**
 
