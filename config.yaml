@@ -7,16 +7,5 @@ credentials:
     admin:
       name: "\uAD00\uB9AC\uC790"
       password: $2b$12$khzPIlhKD4F6M8oOF6FO6u3o21rLUTPtw0rwU.64RHe8NfQ04590K
-    hoon:
-      email: dsaf@naver.com
-      first_name: se
-      last_name: fdsa
-      logged_in: false
-      password: $2b$12$jqkNwAP/dF5LyqXTtYvPfuU/kqXB80bYNLQOpJMFFklZ71BgSwequ
-      password_hint: d
-      roles: null
-    test:
-      name: "\uD14C\uC2A4\uD2B8\uC720\uC800"
-      password: $2b$12$DpmmHRh7ZAte4mOSULduOuRvUfwpt81PY2fkrx15wHcz9ZfllUCI.
 preauthorized:
   emails: []

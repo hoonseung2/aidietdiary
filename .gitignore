@@ -1,17 +1,13 @@
-# 보안 파일
-.env
 
-# 파이썬 캐시 및 실행 파일
+.env
 __pycache__/
 *.py[cod]
 *$py.class
-
-# 가상환경
 venv/
 .venv/
 env/
 diet_diary.db
 .streamlit/
-# 에디터 설정
 .vscode/
 .idea/
+diet_db_backup.sql
