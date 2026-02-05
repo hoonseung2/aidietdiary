@@ -144,7 +144,7 @@ elif choice == "로그인":
                     try:
                     # 2026년 기준 최신 모델명 사용
                         response = client.models.generate_content(
-                        model="gemini-flash-latest"
+                        model="gemini-flash-latest",
                         contents=[prompt, img]
                         )
                     except Exception as e:
