@@ -6,9 +6,7 @@ __pycache__/
 venv/
 .venv/
 env/
-diet_diary.db
 .streamlit/
 .vscode/
 .idea/
 diet_db_backup.sql
-diet_diary.db
