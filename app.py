@@ -80,7 +80,6 @@ elif choice == "로그인":
 
         st.title("🥗 AI 음식 인식 및 식단 일기")
         
-        # 오늘의 요약
         summary_query = text("""
             SELECT SUM(calories) as cal, SUM(protein) as prot FROM diet_logs
             WHERE DATE(created_at) = DATE('now', 'localtime') AND user_id = :uid
@@ -142,20 +141,15 @@ elif choice == "로그인":
                     예: 돈까스, 고기튀김, 커틀릿
                     """
                     try:
-                    # 2026년 기준 최신 모델명 사용
                         response = client.models.generate_content(
                         model="gemini-flash-latest",
                         contents=[prompt, img]
                         )
                     except Exception as e:
-                        # 429 에러(Quota Exceeded) 처리
                         if "429" in str(e):
                             st.warning("⚠️ 현재 무료 API 할당량을 모두 소모했습니다. 약 1분 후 다시 시도해주세요.")
-                        # 기타 에러 처리
                         else:
                             st.error(f"❌ 분석 중 오류가 발생했습니다: {e}")
-    
-                        # 에러 발생 시 이후 로직(데이터베이스 저장 등)이 실행되지 않도록 중단
                         st.stop()                
 
                     raw_text = response.text.strip().replace('\n', ',')
